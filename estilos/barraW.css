@@ -1,0 +1,142 @@
+:root {
+    --fondo   : #333333;
+    --anchoBtn: 100px;
+}
+
+button {
+    border: 1px solid black;
+}
+
+.BarraWindows {
+    position        : absolute;
+    display         : flex;
+    bottom          : 16px;
+    left            : 16px;
+    width           : 90vw;
+    background-color: var(--fondo);
+    border-top      : 2px solid white;
+}
+
+.btnWindows {
+    padding         : 6px;
+    font-size       : 32px;
+    width           : var(--anchoBtn);
+    color           : white;
+    background-color: var(--fondo);
+    cursor          : pointer;
+    transition      : all 0.5s;
+}
+
+.lupa {
+    font-size       : 32px;
+    width           : 60px;
+    color           : black;
+    border-style    : hidden;
+    background-color: white;
+    height          : 56px;
+    cursor          : pointer;
+    transition      : all 0.5s;
+}
+
+.transformLupa {
+    transform: rotate(90deg);
+    font-size: 26px;
+}
+
+.inputLupa {
+    background-color: white;
+    border-top      : 1px solid grey;
+}
+
+.barraInput {
+    height      : 50px;
+    border-style: hidden;
+    font-size   : 18px;
+    color       : #3d3d3d;
+    width       : 273px;
+    border      : 2px solid transparent;
+}
+
+.barraInput:focus-visible {
+    outline-style: inherit;
+    box-shadow   : inset 0px -3px 20px 0px #57565691;
+    border       : 2px solid #0078ff9e;
+}
+
+.barraInput:hover {
+    background-color: #f0f0f0;
+}
+
+.btnEmpezar {
+    padding         : 6px;
+    background-color: var(--fondo);
+    font-size       : 32px;
+    width           : var(--anchoBtn);
+    color           : #00e4ff;
+    cursor          : pointer;
+    height          : 57px;
+    border-bottom   : 1px solid black;
+    transition      : all 0.5s;
+    align-items     : center;
+    display         : flex;
+    justify-content : center;
+}
+
+.fa-eye {
+    color     : yellow;
+    transition: all 0.5s;
+}
+
+.fa-eye-slash {
+    color     : red;
+    transition: all 0.5s;
+}
+
+.btnError {
+    padding         : 6px;
+    background-color: var(--fondo);
+    font-size       : 32px;
+    width           : var(--anchoBtn);
+    color           : white;
+    cursor          : pointer;
+    height          : 57px;
+    border-bottom   : 1px solid black;
+    transition      : all 0.5s;
+}
+
+.btnError:hover,
+.btnEmpezar:hover,
+.btnWindows:hover,
+.lupa:hover {
+    background-color: #646464a9;
+}
+
+.btnWindows:hover .fa-windows {
+    color: rgb(70, 134, 193);
+}
+
+.btnErrorActive {
+    padding         : 6px;
+    font-size       : 32px;
+    color           : white;
+    border-bottom   : 1px solid red;
+    background-color: rgba(210, 83, 83, 0.537);
+    height          : 57px;
+    width           : var(--anchoBtn);
+    cursor          : pointer;
+}
+
+
+.reloj {
+    color  : white;
+    padding: 0px 18px;
+}
+
+.intentosReloj {
+    display        : flex;
+    width          : 100%;
+    flex-direction : row;
+    align-content  : stretch;
+    justify-content: flex-end;
+    align-items    : center;
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberto Carrasco Examen 1º modulo</title>
+    <link rel="stylesheet" href="estilos/monitor.css">
+    <link rel="stylesheet" href="estilos/teclado.css">
+    <link rel="stylesheet" href="estilos/css.css">
+    <link rel="stylesheet" href="estilos/barraW.css">
+    <!--iconos-->
+    <script src="https://kit.fontawesome.com/8c042031e8.js" crossorigin="anonymous"></script>
+    <script defer src="js.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>El juego del Ahorcado</h1>
+    </header>
+    <main>
+        <div class="contendor">
+
+            <!---monitor-->
+            <section class="secMonitor">
+                <div>
+                    <div class="stand">
+                        <div class="monitor">
+                            <!--pantalla-->
+                            <section class="pantalla">
+                                <p class="salida" id="salida"></p>
+                                <p class="errores contErrores" id="error"> </p>
+                            </section>
+                        </div>
+                        <!--barraWindows-->
+                        <div id="BarraWindows" style=" position: relative;">
+                            <div class="BarraWindows">
+                                <button class="btnWindows"><i class="fa-brands fa-windows"></i></button>
+                                <div class="flex inputLupa">
+                                    <button class="ini lupa" onclick="inicio()" title="Validar juego">
+                                        <i class=" transformLupa fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                    <input type="text" name="intro_texto" id="intro_texto" class="barraInput controles"
+                                        placeholder="Introduce una palabra o frase...">
+                                </div>
+                                <button class="ini btnEmpezar" onclick="inicio()" title="Validar juego">
+                                    <i class="fa-brands fa-golang"></i>
+                                </button>
+                                <button class="ini btnEmpezar " onclick="randon()" title="Generar palabra aleatoria">
+                                    <img src="img/ico-random.png" alt="aleatorio" style="max-width: 39px;">
+                                </button>
+                                <button class="btnError" id="idBtnError" type="button" onclick="ocultarErrores(this)"
+                                    title="Mostrar o ocultar errrores">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                                <div class="intentosReloj">
+                                    <p id="intentos"> </p>
+                                    <p id="reloj" class="reloj"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="centrar">
+                            <div class="cuerpoPie"></div>
+                        </div>
+                        <div class="centrar">
+                            <div class="pie"></div>
+                        </div>
+                    </div>
+            </section>
+            <!--botonera-->
+            <section id="botonera" class="margenAbajo">
+                <div class="teclado center">
+                    <div class="bloque">
+                        <div class="fila-teclas">
+                            <span class="tecla tecla-tab">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('q')">
+                                <span>q</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('w')">
+                                <span>w</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('e')">
+                                <span>e</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('r')">
+                                <span>r</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('t')">
+                                <span>t</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('y')">
+                                <span>y</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('u')">
+                                <span>u</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('i')">
+                                <span>i</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('o')">
+                                <span>o</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('p')">
+                                <span>p</span>
+                            </span>
+                            <span class="tecla tecla-caract-espec-tiny">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-caract-espec-tiny">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-enter">
+                                <span></span>
+                            </span>
+                        </div>
+                        <div class="fila-teclas">
+                            <span class="tecla tecla-bloq-mayus">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('a')">
+                                <span>a</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('s')">
+                                <span>s</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('d')">
+                                <span>d</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('f')">
+                                <span>f</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('g')">
+                                <span>g</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('h')">
+                                <span>h</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('j')">
+                                <span>j</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('k')">
+                                <span>k</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('l')">
+                                <span>l</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('ñ')">
+                                <span>ñ</span>
+                            </span>
+                            <span class="tecla tecla-caract-espec-tiny">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-caract-espec-tiny">
+                                <span></span>
+                            </span>
+                        </div>
+                        <div class="fila-teclas">
+                            <span class="tecla tecla-shift">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-caract-espec">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('z')">
+                                <span>z</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('x')">
+                                <span>x</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('c')">
+                                <span>c</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('v')">
+                                <span>v</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('b')">
+                                <span>b</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('n')">
+                                <span>n</span>
+                            </span>
+                            <span class="tecla tecla-letra" onclick="btnLetra('m')">
+                                <span>m</span>
+                            </span>
+                            <span class="tecla tecla-caract-espec">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-caract-espec">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-caract-espec">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-shift">
+                                <span></span>
+                            </span>
+                            <span class="tecla tecla-simple">
+                                <span></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--modales-->
+            <div id="modal"></div>
+            <div id="infoModal"></div>
+        </div>
+    </main>
+</body>
+
+</html>
